@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="images/png" href="../pubilc/images/icon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>layer-base</title>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #3b82f6;
+        --font-size-2xl: 1.5rem;
+      }
+      @layer base {
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        a {
+          color: red;
+        }
+        h1 {
+          font-size: var(--font-size-2xl);
+        }
+      }
+      @layer components {
+        .btn {
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.5rem;
+          font-weight: 700;
+          transition: all 200ms;
+          background-color: var(--color-primary);
+        }
+        .btn:hover {
+          background-color: blue;
+        }
+      }
+      @layer utilities {
+        .center-flex {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-500 to-black min-h-screen p-8 center-flex"
+  >
+    <a
+      class="fixed top-4 left-4 bg-white text-purple-500 px-4 py-2 rounded-lg shadow-lg hover:bg-purple-100 font-bold"
+      href="../index.html"
+      >กลับ</a
+    >
+    <section>
+      <h2>ตัวอย่างการใช้งาน</h2>
+      <a href="#"> this is a link</a>
+      <a href="#"> this is a link</a>
+      <button class="btn">button 1</button>
+      <button class="btn">button 1</button>
+      <h1>heading 1</h1>
+    </section>
+  </body>
+</html>
